@@ -1,7 +1,7 @@
-import { LOTTO_COUNT, MAX_LOTTO_NUMBER, MIN_LOTTO_NUMBER } from "../constants/LottoConstants";
+import { LOTTO_COUNT, MAX_LOTTO_NUMBER, MIN_LOTTO_NUMBER } from "../constants/LottoConstants.js";
 
 const validateNumeric = (numbers) => {
-  for (number of numbers) {
+  for (const number of numbers) {
     if (Number.isNaN(number)) {
       throw new Error("[ERROR] ,를 통해 숫자들을 구분해 주세요");
     }

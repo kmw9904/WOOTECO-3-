@@ -8,10 +8,11 @@ class InputView {
   }
 
   async readWinningNumber() {
-    const input = await Console.readLineAsync("당첨 번호를 입력해주세요.\n");
+    const input = await Console.readLineAsync("\n당첨 번호를 입력해주세요.\n");
 
     return input.split(",").map((number) => Number(number.trim()));
   }
+
 }
 
 export default InputView;
