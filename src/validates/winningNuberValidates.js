@@ -15,7 +15,7 @@ const validateCount = (numbers) => {
 };
 
 const validateRange = (numbers) => {
-  if (Math.min(numbers) < MIN_LOTTO_NUMBER || Math.max(numbers) > MAX_LOTTO_NUMBER) {
+  if (Math.min(...numbers) < MIN_LOTTO_NUMBER || Math.max(...numbers) > MAX_LOTTO_NUMBER) {
     throw new Error("[ERROR] 로또 번호는 1 ~ 45 사이에 숫자를 입력해야 합니다.");
   }
 };
@@ -26,3 +26,10 @@ const validateDuplicate = (numbers) => {
     throw new Error("[ERROR] 중복된 숫자는 입력할 수 없습니다.");
   }
 };
+
+export default function winningNumberValidates(numbers) {
+  validateNumeric(numbers);
+  validateCount(numbers);
+  validateRange(numbers);
+  validateDuplicate(numbers);
+}
