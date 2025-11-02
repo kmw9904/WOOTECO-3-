@@ -3,6 +3,7 @@ import InputView from "./InputView.js";
 import OutputView from "./OutputView.js";
 import generateLottoNumber from "./utils/generateLottoNumber.js";
 import amountValidates from "./validates/amountValidates.js";
+import bonusNumberValidates from "./validates/bonusNumberValidates.js";
 import winningNumberValidates from "./validates/winningNuberValidates.js";
 
 class App {
@@ -21,7 +22,9 @@ class App {
 
     winningNumberValidates(winningNumber);
 
-    
+    const bonusNumber = await this.inputView.readBonusNumber();
+
+    bonusNumberValidates(bonusNumber, winningNumber);
   }
 }
 
