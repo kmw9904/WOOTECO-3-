@@ -1,15 +1,16 @@
-import InputView from "./InputView";
-import OutputView from "./OutputView";
+import InputView from "./InputView.js";
+import OutputView from "./OutputView.js";
+import amountValidates from "./validates/amountValidates.js";
 
 class App {
   constructor() {
-    this.inputView = new this.InputView();
-    this.outputView = new this.OutputView();
+    this.inputView = new InputView();
+    this.outputView = new OutputView();
   }
   async run() {
     const amount = await this.inputView.readPurchaseAmount();
 
-    
+    amountValidates(amount);
   }
 }
 
