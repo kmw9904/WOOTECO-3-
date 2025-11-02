@@ -11,6 +11,10 @@ class App {
     const amount = await this.inputView.readPurchaseAmount();
 
     amountValidates(amount);
+
+    const winningNumber = await this.inputView.readWinningNumber()
+
+    
   }
 }
 
