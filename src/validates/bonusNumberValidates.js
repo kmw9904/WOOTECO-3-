@@ -7,16 +7,22 @@ const validateNumeric = (bonusNumber) => {
 };
 
 const validateRange = (bonusNumber) => {
-  if (Math.min(...bonusNumber) < MIN_LOTTO_NUMBER || Math.max(...bonusNumber) > MAX_LOTTO_NUMBER) {
+  if (bonusNumber < MIN_LOTTO_NUMBER || bonusNumber > MAX_LOTTO_NUMBER) {
     throw new Error("[ERROR] 보너스 번호는 1 ~ 45 사이에 숫자를 입력해야 합니다.");
   }
 };
 
 const validateDuplicate = (bonusNumber, winningNumber) => {
-  const uniqueNumber = new Set(bonusNumber, winningNumber);
+  const uniqueNumber = combinedNumbers(winningNumber, bonusNumber);
   if (uniqueNumber.size !== TOTAL_LOTTO_COUNT) {
     throw new Error("[ERROR] 중복된 숫자는 입력할 수 없습니다.");
   }
+};
+
+const combinedNumbers = (winningNumber, bonusNumber) => {
+  const uniqueNumber = new Set([...winningNumber, bonusNumber]);
+
+  return uniqueNumber;
 };
 
 export default function bonusNumberValidates(bonusNumber, winningNumber) {
