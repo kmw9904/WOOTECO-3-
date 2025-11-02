@@ -25,6 +25,8 @@ class App {
     const bonusNumber = await this.inputView.readBonusNumber();
 
     bonusNumberValidates(bonusNumber, winningNumber);
+
+    
   }
 }
 

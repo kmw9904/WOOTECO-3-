@@ -13,16 +13,9 @@ const validateRange = (bonusNumber) => {
 };
 
 const validateDuplicate = (bonusNumber, winningNumber) => {
-  const uniqueNumber = combinedNumbers(winningNumber, bonusNumber);
-  if (uniqueNumber.size !== TOTAL_LOTTO_COUNT) {
+  if (winningNumber.includes(bonusNumber)) {
     throw new Error("[ERROR] 중복된 숫자는 입력할 수 없습니다.");
   }
-};
-
-const combinedNumbers = (winningNumber, bonusNumber) => {
-  const uniqueNumber = new Set([...winningNumber, bonusNumber]);
-
-  return uniqueNumber;
 };
 
 export default function bonusNumberValidates(bonusNumber, winningNumber) {
