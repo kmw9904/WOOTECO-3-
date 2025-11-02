@@ -19,13 +19,14 @@ const validateUnit = (amount) => {
 };
 
 const validateNumber = (amount) => {
-  if (!amount) {
+  if (Number.isNaN(amount)) {
     throw new Error("[ERROR] 숫자를 입력해주세요.");
   }
 };
 
 export default function amountValidates(amount) {
+  validateNumber(amount);
   validateNegative(amount);
-  validateUnit(amount);
   validateZero(amount);
+  validateUnit(amount);
 }
