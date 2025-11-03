@@ -16,7 +16,9 @@ class App {
 
     amountValidates(amount);
 
-    this.outputView.printPurchasedLottos(generateLottoNumber(amount / LOTTO_PRICE));
+    const lottos = generateLottoNumber(amount / LOTTO_PRICE);
+
+    this.outputView.printPurchasedLottos(lottos);
 
     const winningNumber = await this.inputView.readWinningNumber();
 
@@ -25,8 +27,6 @@ class App {
     const bonusNumber = await this.inputView.readBonusNumber();
 
     bonusNumberValidates(bonusNumber, winningNumber);
-
-    
   }
 }
 
