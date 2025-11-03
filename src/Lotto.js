@@ -47,6 +47,10 @@ class Lotto {
     return this.#numbers.filter((number) => winningNumber.includes(number))
       .length;
   }
+
+  hasbonusNumber(bonusNumber) {
+    return this.#numbers.includes(bonusNumber);
+  }
 }
 
 export default Lotto;
