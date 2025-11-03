@@ -2,7 +2,7 @@ import {
   LOTTO_COUNT,
   MAX_LOTTO_NUMBER,
   MIN_LOTTO_NUMBER,
-} from "./constants/LottoConstants";
+} from "./constants/LottoConstants.js";
 
 class Lotto {
   #numbers;
@@ -48,7 +48,7 @@ class Lotto {
       .length;
   }
 
-  hasbonusNumber(bonusNumber) {
+  hasBonusNumber(bonusNumber) {
     return this.#numbers.includes(bonusNumber);
   }
 }

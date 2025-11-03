@@ -46,6 +46,7 @@
 - 객체 지향을 지향하기 위해 새로운 WinningLotto의 객체를 만든다음 당첨 로또 번호는 기존의 Lotto 유효성 검사를 진행하고 기존의 bonusNumberValidate를 WinningLotto의 보너스 번호 유효성 검사로 바꿈
 - Lotto 클래스에 당첨 번호와 맞는지의 메서드를 구현하기 위해 getMatchCount 메서드를 구현
 - Lotto 클래스에 보너스 번호가 들어가 있는지 hasBonusNumber로 구현
+- 번호에 따른 등수 부여 match 메서드를 WinningLotto 클래스에 구현 후 출력뷰에 순위에 따른 당첨 통계 출력 구현 완료
 
 ## 배운점
 

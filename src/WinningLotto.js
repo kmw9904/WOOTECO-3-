@@ -1,6 +1,8 @@
 import {
+  MATCH_COUNT_TO_RANK,
   MAX_LOTTO_NUMBER,
   MIN_LOTTO_NUMBER,
+  RANK,
 } from "./constants/LottoConstants.js";
 import Lotto from "./Lotto.js";
 
@@ -31,5 +33,19 @@ export default class WinningLotto {
     }
   }
 
-  match(purchasedLotto) {}
+  #determineRank(matchCount, hasBonus) {
+    if (matchCount === 5 && hasBonus) {
+      return RANK.SECOND;
+    }
+
+    return MATCH_COUNT_TO_RANK[matchCount];
+  }
+
+  match(purchasedLotto) {
+    const matchCount = purchasedLotto.getMatchCount(this.#lotto.getNumbers());
+
+    const hasBonus = purchasedLotto.hasBonusNumber(this.#bonusNumber);
+
+    return this.#determineRank(matchCount, hasBonus);
+  }
 }
