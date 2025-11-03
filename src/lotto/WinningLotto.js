@@ -3,7 +3,7 @@ import {
   MAX_LOTTO_NUMBER,
   MIN_LOTTO_NUMBER,
   RANK,
-} from "./constants/LottoConstants.js";
+} from "../constants/LottoConstants.js";
 import Lotto from "./Lotto.js";
 
 export default class WinningLotto {

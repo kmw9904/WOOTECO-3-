@@ -1,5 +1,10 @@
 import { Console } from "@woowacourse/mission-utils";
-import { RANK } from "./constants/LottoConstants.js";
+import {
+  LOTTERY_PRIZE,
+  LOTTO_PRICE,
+  PERCENT,
+  RANK,
+} from "./constants/LottoConstants.js";
 
 class OutputView {
   printPurchasedLottos(lottos) {
@@ -23,8 +28,12 @@ class OutputView {
       6: 0,
     };
 
+    let total = 0;
+
     for (const lotto of lottos) {
-      rankLotto[winningLotto.match(lotto)] += 1;
+      const rank = winningLotto.match(lotto);
+      rankLotto[rank] += 1;
+      total += LOTTERY_PRIZE[rank];
     }
 
     Console.print(`3개 일치 (5,000원) - ${rankLotto[RANK.FIFTH]}개`);
@@ -34,6 +43,10 @@ class OutputView {
       `5개 일치, 보너스 볼 일치 (30,000,000원) - ${rankLotto[RANK.SECOND]}개`
     );
     Console.print(`6개 일치 (2,000,000,000원) - ${rankLotto[RANK.FIRST]}개`);
+
+    Console.print(
+      `총 수익률은 ${(total / (lottos.length * LOTTO_PRICE)) * PERCENT}%입니다.`
+    );
   }
 }
 

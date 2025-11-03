@@ -2,7 +2,7 @@ import {
   LOTTO_COUNT,
   MAX_LOTTO_NUMBER,
   MIN_LOTTO_NUMBER,
-} from "./constants/LottoConstants.js";
+} from "../constants/LottoConstants.js";
 
 class Lotto {
   #numbers;

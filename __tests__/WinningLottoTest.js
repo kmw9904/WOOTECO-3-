@@ -1,4 +1,4 @@
-import WinningLotto from "../src/winningLotto.js";
+import WinningLotto from "../src/lotto/WinningLotto.js";
 
 describe("보너스 번호 유효성 검사(WinningLotto)", () => {
   test("숫자를 입력 안할 경우 오류 발생", () => {
