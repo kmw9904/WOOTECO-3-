@@ -31,5 +31,5 @@ export default class WinningLotto {
     }
   }
 
-  match(printPurchasedLotto) {}
+  match(purchasedLotto) {}
 }
