@@ -1,4 +1,4 @@
-import { MAX_LOTTO_NUMBER, MIN_LOTTO_NUMBER, TOTAL_LOTTO_COUNT } from "../constants/LottoConstants.js";
+import { MAX_LOTTO_NUMBER, MIN_LOTTO_NUMBER } from "../constants/LottoConstants.js";
 
 const validateNumeric = (bonusNumber) => {
   if (Number.isNaN(bonusNumber)) {

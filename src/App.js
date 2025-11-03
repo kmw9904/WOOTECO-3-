@@ -5,6 +5,7 @@ import generateLottoNumber from "./utils/generateLottoNumber.js";
 import amountValidates from "./validates/amountValidates.js";
 import bonusNumberValidates from "./validates/bonusNumberValidates.js";
 import winningNumberValidates from "./validates/winningNuberValidates.js";
+import WinningLotto from "./winningLotto.js";
 
 class App {
   constructor() {
@@ -22,11 +23,9 @@ class App {
 
     const winningNumber = await this.inputView.readWinningNumber();
 
-    winningNumberValidates(winningNumber);
-
     const bonusNumber = await this.inputView.readBonusNumber();
 
-    bonusNumberValidates(bonusNumber, winningNumber);
+    const winningLotto = new WinningLotto(winningNumber, bonusNumber);
   }
 }
 

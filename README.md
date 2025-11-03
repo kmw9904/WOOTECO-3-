@@ -43,6 +43,7 @@
 - 보너스 숫자 입력과 유효성 검증 구현 완료
 - 보너스 숫자 1미만 45초과일 경우, 숫자가 아닐 경우, 중복될 경우 단위 테스트 구현 완료
 - 객체 지향을 공부한 결과 기존의 winningNumberValidate의 검사를 Lotto 클래스에 validate에 추가함
+- 객체 지향을 지향하기 위해 새로운 WinningLotto의 객체를 만든다음 당첨 로또 번호는 기존의 Lotto 유효성 검사를 진행하고 기존의 bonusNumberValidate를 WinningLotto의 보너스 번호 유효성 검사로 바꿈
 
 ## 배운점
 
